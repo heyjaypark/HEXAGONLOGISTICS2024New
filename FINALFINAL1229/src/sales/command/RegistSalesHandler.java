@@ -110,7 +110,7 @@ public class RegistSalesHandler implements CommandHandler {
 			販売量は在庫量より大きいかマイナスになることはできない。*/
 			if ((s_seoul < 0 || s_seoul > p_seoul) || (s_suwon < 0 || s_suwon > p_suwon) || (s_incheon < 0 || s_incheon > p_incheon)) {
 				throw new IllegalArgumentException("販売量が形式に合いません。");
-			}
+			}else {
 
 			/* 얻은 파라미터 값을 쿼리문 작성에 필요한 객체에 저장한다.
 			得られたパラメータ値をクエリ文を作成するために必要なオブジェクトに保存する。*/
@@ -120,6 +120,7 @@ public class RegistSalesHandler implements CommandHandler {
 			salesReq.setS_incheon(s_incheon);
 			salesReq.setS_date(s_date);
 			salesReq.setS_registant(s_registrant);
+			}
 
 			salesReq.validate(errors);
 

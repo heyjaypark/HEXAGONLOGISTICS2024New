@@ -27,7 +27,7 @@ public class ProductlogDao {
 		try {
 
 			pstmt = conn.prepareStatement(
-					"SELECT * FROM (SELECT ROWNUM AS NUM, product_log.* FROM product_log)WHERE NUM BETWEEN ? AND ? order by l_no");
+					"SELECT * FROM (SELECT ROWNUM AS NUM, product_log.* FROM product_log)WHERE NUM BETWEEN ? AND ? order by l_no desc");
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, size);
 			rs = pstmt.executeQuery();

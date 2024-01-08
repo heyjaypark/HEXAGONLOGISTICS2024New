@@ -30,7 +30,7 @@ public class ListArticleService {
 			 * 게시글 1번부터 10번, 11번부터 20번...으로 가져오기위한 매개 변수입력 
 			 * 投稿1~10番、11~20番にインポートするためのパラメータ入力
 			 */
-			List<Article> content = articleDao.select(conn, (pageNum-1)*size+1, (pageNum)*size);
+			List<Article> content = articleDao.select(conn, total-(pageNum)*(size), total-(pageNum-1)*(size)-1);
 			return new ArticlePage(total,pageNum,size,content);
 			
 		}catch(SQLException e) {

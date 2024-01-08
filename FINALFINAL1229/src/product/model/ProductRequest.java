@@ -1,6 +1,7 @@
 package product.model;
 
 import java.sql.Date;
+import java.util.Map;
 
 public class ProductRequest {
 	
@@ -101,8 +102,19 @@ public class ProductRequest {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-
+	public void validate(Map<String, Boolean> errors) {
+		checkEmpty(errors, p_no, "p_no");
+		checkEmpty(errors, date, "date");
+	}
+	  private void checkEmpty(Map<String, Boolean> errors, Object value, String fieldName) {
+	        if (value == null) {
+	            errors.put(fieldName, Boolean.TRUE);
+	        } else if (value instanceof String && ((String) value).isEmpty()) {
+	            errors.put(fieldName, Boolean.TRUE);
+	        } else if (value instanceof Integer && (Integer) value == 0) {
+	            errors.put(fieldName, Boolean.TRUE);
+	        }
+	    }
 
 
 }

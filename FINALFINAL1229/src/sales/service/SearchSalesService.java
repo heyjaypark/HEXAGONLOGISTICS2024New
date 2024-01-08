@@ -32,7 +32,7 @@ public class SearchSalesService {
 			System.out.println("SearchSalesService:" + total);
 			
 		
-			List<SalesList> content = salesDao.select2(conn, (pageNum - 1)* size+1, size * pageNum, code);		
+			List<SalesList> content = salesDao.select2(conn, total-(pageNum)*(size), total-(pageNum-1)*(size)-1, code);		
 			
 			return new SalesPage(total, pageNum, size, content);		
 		} catch (SQLException e) {
@@ -47,7 +47,7 @@ public class SearchSalesService {
 			System.out.println("SearchSalesService:" + total);
 			
 	
-			List<SalesList> content = salesDao.select3(conn, (pageNum - 1)* size+1, size * pageNum, code);		
+			List<SalesList> content = salesDao.select3(conn, (pageNum - 1) * size + 1, (pageNum) * size, code);		
 			
 			return new SalesPage(total, pageNum, size, content);		
 		} catch (SQLException e) {

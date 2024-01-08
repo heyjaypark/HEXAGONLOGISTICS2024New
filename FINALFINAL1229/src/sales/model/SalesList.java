@@ -1,5 +1,7 @@
 package sales.model;
 
+import java.util.Date;
+
 /*판매이력 테이블을 불러와 저장할 VO생성
  * 販売履歴テーブルを読み込んで保存するVO生成*/
 public class SalesList {
@@ -10,11 +12,11 @@ public class SalesList {
 	private int s_Seoul;
 	private int s_Suwon;
 	private int s_Incheon;
-	private String s_Date;
+	private Date s_Date;
 	private int price;
 	private String s_Registrant;
 	
-	public SalesList (int s_Num, int p_No, String p_Name, int s_Seoul, int s_Suwon, int s_Incheon, String s_Date, int price, String s_Registrant) {
+	public SalesList (int s_Num, int p_No, String p_Name, int s_Seoul, int s_Suwon, int s_Incheon, Date s_Date, int price, String s_Registrant) {
 		this.s_Num = s_Num;		
 		this.p_No = p_No;
 		this.p_Name = p_Name;
@@ -84,11 +86,13 @@ public class SalesList {
 		this.s_Incheon = s_Incheon;
 	}
 
-	public String getS_Date() {
+
+
+	public Date getS_Date() {
 		return s_Date;
 	}
 
-	public void setS_Date(String s_Date) {
+	public void setS_Date(Date s_Date) {
 		this.s_Date = s_Date;
 	}
 

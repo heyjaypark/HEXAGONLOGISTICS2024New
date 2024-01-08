@@ -26,7 +26,7 @@ public class ListSalesService {
 			int total = salesDao.selectCount(conn);
 			System.out.println("salesListService:" + pageNum);
 			
-			List<SalesList> content = salesDao.select1(conn, (pageNum - 1)* size+1, size * pageNum);
+			List<SalesList> content = salesDao.select1(conn, total-(pageNum)*(size), total-(pageNum-1)*(size)-1);
 			return new SalesPage(total, pageNum, size, content);		
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
