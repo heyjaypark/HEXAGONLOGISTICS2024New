@@ -32,7 +32,7 @@ public class SearchSalesService {
 			System.out.println("SearchSalesService:" + total);
 			
 		
-			List<SalesList> content = salesDao.select2(conn, total-(pageNum)*(size), total-(pageNum-1)*(size)-1, code);		
+			List<SalesList> content = salesDao.select2(conn, total-(pageNum)*(size)+1, total-(pageNum-1)*(size), code);		
 			
 			return new SalesPage(total, pageNum, size, content);		
 		} catch (SQLException e) {

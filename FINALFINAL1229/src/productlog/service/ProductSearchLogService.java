@@ -27,7 +27,7 @@ public class ProductSearchLogService {
 			// 현재 페이지에 해당하는 상품 목록 조회
 			// 現在のページに対応する商品リストを取得
 
-			List<ProductLogRequest> content = productlogDao.select2(conn,  p_no, (pageNum - 1) * size + 1, (pageNum) * size);
+			List<ProductLogRequest> content = productlogDao.select2(conn,  p_no,total-(pageNum)*(size)+1, total-(pageNum-1)*(size));
 			// ProductPage 객체를 생성하여 반환
 			// ProductPage オブジェクトを生成して返す
 			System.out.println("search" + content);
