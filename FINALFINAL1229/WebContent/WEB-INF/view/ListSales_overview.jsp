@@ -34,7 +34,7 @@
 				<th>日付</th>
 				<th>単価</th>
 				<th>Total</th>
-				<th>등록인</th>
+				<th>登録者</th>
 				
 			</tr>
 			
